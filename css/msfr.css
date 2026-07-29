@@ -342,7 +342,7 @@ iframe {
   max-width: 556px;
   height: 171px;
   border: 2px #00000000;
-  border-radius: 12px;
+  border-radius: 5px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
 }
 
