@@ -1,0 +1,658 @@
+/* ==============================
+   Caffine Oppossum Games CSS Source
+   Palette: Racing Red + Golden Yellow + Deep Black
+   Written By: Jeeves https://github.com/JeevesGB
+   © 2026 JejCo
+   Improved for readability + responsive scaling
+  ============================== */
+:root {
+  --black:          #000000;
+  --near-black:     #101012;
+  --racing-red:     #DB100B;
+  --deep-crimson:   #A00806;
+  --blood-red:      #5C0A06;
+  --bright-yellow:  #FDDB36;
+  --golden-amber:   #E2A323;
+  --orange-gold:    #E7AA56;
+  --dark-gold:      #9A690E;
+  --light-gray:     #A09D9D;
+  --medium-gray:    #5E5C57;
+  --dark-blue-gray: #263948;
+
+  /* Semantic aliases - improved contrast */
+  --bg:             #0a0a0c;
+  --panel:          #1a1a1f;
+  --panel-dark:     #121216;
+  --border:         #3a3a40;
+  --text:           #e0e0e0;
+  --text-light:     #ffffff;
+  --muted:          #9a9aa0;
+  --accent:         var(--racing-red);
+  --accent-hover:   var(--bright-yellow);
+  --glow:           rgba(219, 16, 11, 0.55);
+  --shadow:         rgba(0, 0, 0, 0.75);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 5;
+  padding: 5;
+}
+
+.parallax-bg {
+  position: fixed;
+  top: -20vh;             /* start a bit above the viewport */
+  left: 0;
+  width: 100%;
+  height: 250vh;          /* plenty of extra height */
+  background-color: #0a0a0c;
+  background-image:
+    radial-gradient(circle at 50% 20%, rgba(25, 4, 4, 0.70) 0%, rgba(8, 8, 10, 0.044) 70%),
+    url('../img/idxbg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: -1;
+  will-change: transform;
+  pointer-events: none;
+}
+
+body {
+  background: transparent !important;
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  line-height: 1.7;
+  min-height: 100vh;
+  font-size: 1.05rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.play-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  transition: transform 0.2s ease;
+}
+
+.play-btn img {
+  width: 64px;               /* ← change this number to resize */
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+
+
+/* ---------- Mute Button ---------- */
+:root {
+  --mute-size: 50px;   /* ← change this value to scale the button */
+}
+
+.mute-btn {
+  position: fixed;
+  top: 22px;
+  left: 86px;          /* sits nicely next to the back button */
+  z-index: 100;
+  width: var(--mute-size);
+  height: var(--mute-size);
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  box-shadow: none;
+}
+
+.mute-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.mute-btn:hover {
+  transform: translateY(-3px);
+}
+
+.mute-btn:hover img {
+  transform: scale(1.1);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  display: block;
+  max-width: 680px;
+  width: 100%;
+  height: auto;
+  margin: 20px auto 20px auto;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  transition: fixed;
+}
+
+
+/* ---------- Containers ---------- */
+.container {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 10px 10px;
+  background: #00000093;
+  /*background: linear-gradient(180deg, var(--panel) 0%, var(--panel-dark) 100%);*/
+  border: 1px #000000f7 var(--border);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 14px 45px rgba(0, 0, 0, 0.75);
+}
+
+/* ---------- Titles ---------- */
+.title {
+  font-family: 'Segoe UI', 'Arial Black', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-size: 2.35rem;
+  text-transform: uppercase;
+  margin: 0 0 26px 0;
+  position: relative;
+
+  /* Gradient text */
+  background: linear-gradient(
+    to right,
+    var(--racing-red),
+    var(--bright-yellow),
+    var(--golden-amber),
+    var(--racing-red)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Optional glow */
+  filter: drop-shadow(0 0 8px rgba(219, 16, 11, 0.45));
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: min(520px, 85%);
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--racing-red),
+    var(--bright-yellow),
+    var(--golden-amber),
+    var(--racing-red)
+  );
+  margin: 14px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 12px var(--glow);
+}
+
+/* ---------- Body text readability ---------- */
+.container p {
+  margin: 0 0 1.15em 0;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+.container p:last-child {
+  margin-bottom: 0;
+}
+
+.container strong {
+  color: var(--bright-yellow);
+  font-weight: 700;
+  font-size: 1.12em;
+}
+
+.container i {
+  font-style: normal;
+  display: block;
+}
+
+/* ---------- Video ---------- */
+video {
+  display: block;
+  margin: 24px auto;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
+  background: #000;
+}
+
+/* ---------- itch.io embed ---------- */
+iframe {
+  display: block;
+  margin: 28px auto 8px auto;
+  width: 100%;
+  max-width: 556px;
+  height: 171px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
+}
+
+/* PATREON */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.tier-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.tier-card img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tier-card h3 {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 1.15rem;
+  color: #ffcc00; /* or whatever accent colour you use */
+}
+
+.tier-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--gt-muted, #ccc);
+  margin: 0;
+}
+.patreon-btn {
+  display: inline-block;
+  background: #ff424d;               /* Official Patreon red */
+  color: white !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 66, 77, 0.25);
+}
+
+.patreon-btn:hover {
+  background: #e03a44;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 66, 77, 0.35);
+}
+
+/* ---------- Side Socials (right) ---------- */
+.side-socials {
+  position: fixed;
+  top: 100px;
+  right: 18px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.side-social {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+  overflow: visible;
+  text-decoration: none;
+  padding: 0;
+}
+
+.side-social img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.side-social-label {
+  position: absolute;
+  right: 68px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  color: var(--bright-yellow);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.side-social:hover {
+  transform: translateX(-4px);
+}
+
+.side-social:hover img {
+  transform: scale(1.08);
+}
+
+.side-social:hover .side-social-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ---------- Cars grid ---------- */
+.archive-card {
+  display: inline-block;
+  margin: 12px 10px;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+.archive-card:hover {
+  transform: translateY(-6px);
+  background: rgba(15, 15, 18, 0.4);
+}
+.archive-card img {
+  display: block;
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+.archive-card:hover img {
+  transform: scale(1.06);
+}
+
+/* ---------- Screenshots ---------- */
+.screenshot {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 24px auto;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: #0a0a0c;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.screenshot:hover {
+  transform: scale(1.025);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+  border-color: rgba(219, 16, 11, 0.5);
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.screenshot-grid .screenshot {
+  margin-bottom: 0;
+}
+
+/* ---------- Side Thumbnails ---------- */
+.side-thumbs {
+  position: fixed;
+  top: 100px;
+  left: 18px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.side-thumb {
+  position: relative;          
+  display: block;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  overflow: visible;           
+  transition: transform 0.25s ease;
+  background: transparent;
+}
+
+.side-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+  border-radius: 10px;
+}
+
+.thumb-label {
+  position: absolute;
+  left: 68px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  background: transparent;
+  color: var(--bright-yellow);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 0;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  border: none;
+  box-shadow: none;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Show the label on hover */
+.side-thumb:hover .thumb-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.side-thumb:hover {
+  transform: translateX(4px);
+}
+
+.side-thumb:hover img {
+  transform: scale(1.08);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--bright-yellow);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--racing-red);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 40px 20px 30px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Back Button ---------- */
+.back-btn {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.back-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-3px);
+}
+
+.back-btn:hover img {
+  transform: scale(1.1);
+}
+
+
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    margin: 28px 18px;
+    padding: 30px 28px;
+  }
+  .title {
+    font-size: 2.05rem;
+  }
+  .logo {
+    width: 90%;
+    max-width: 560px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+.mute-btn {
+    top: 14px;
+    left: 70px;          
+  }
+.back-btn {
+  top: 14px;
+  left: 14px;
+  width: 46px;
+  height: 46px;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  body {
+    font-size: 1rem;
+  }
+  .container {
+    margin: 20px 12px;
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+  .title {
+    font-size: 1.75rem;
+    letter-spacing: 0.06em;
+  }
+  .title::after {
+    width: 80%;
+  }
+  .container p {
+    font-size: 1.02rem;
+  }
+  .logo {
+    width: 100%;
+    margin: 28px auto 22px auto;
+  }
+  video {
+    margin: 18px auto;
+    border-radius: 10px;
+  }
+  iframe {
+    height: 155px;
+  }
+  .archive-card {
+    margin: 8px 6px;
+  }
+  .archive-card img {
+    max-width: 110px;
+  }
+  .back-btn {
+    top: 14px;
+    left: 14px;
+    width: 46px;
+    height: 46px;
+  }
+  footer {
+    padding: 30px 16px 24px;
+    font-size: 0.9rem;
+  }
+    .side-socials {
+    top: auto;
+    bottom: 20px;
+    right: 12px;
+    gap: 10px;
+  }
+  .side-social {
+    width: 46px;
+    height: 46px;
+  }
+  .side-social-icon {
+    font-size: 0.75rem;
+  }
+  .side-social-label {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .title {
+    font-size: 1.55rem;
+  }
+  .container {
+    padding: 20px 16px;
+  }
+}

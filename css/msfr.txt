@@ -1,0 +1,41 @@
+/* ==============================
+    Misfire Palette Data 
+    Palette: Racing Red + Golden Yellow + Deep Black
+    Written By: Jeeves https://github.com/JeevesGB
+    © 2026 JejCo
+   ============================== */
+
+
+Swatch              Hex     RGBRole / Description
+
+⬛#0000000,          0,         0   Pure black (background, shadows)
+🌑#10101216,        16,         18  Near-black / dark charcoal
+🔴#DB100B219,       16,         11  Bright racing red (car body)
+🟥#A00806160,       8,          6   Deep crimson / dark red
+🩸#5C0A0692,        10,         6   Very dark red / blood red
+🟡#FDDB36253,       219,        54  Bright yellow (road markings)
+🟨#E2A323226,       163,        35  Golden yellow / amber
+🟧#E7AA56231,       170,        86  Warm orange-gold
+🟤#9A690E154,       105,        14  Dark gold / bronze
+⬜#A09D9D160,        157,       157 Light gray / metal🩶#5E5C5794, 92, 87Medium gray
+🔵#26394838,        57,         72  Dark blue-gray (shadows/sky)
+
+
+:root {
+  /* ===== Missfire Color Palette ===== */
+  --black:          #000000; /* Pure black (background, shadows) */
+  --near-black:     #101012; /* Near-black / dark charcoal */
+  --racing-red:     #DB100B; /* Bright racing red (car body) */
+  --deep-crimson:   #A00806; /* Deep crimson / dark red */
+  --blood-red:      #5C0A06; /* Very dark red / blood red */
+  --bright-yellow:  #FDDB36; /* Bright yellow (road markings) */
+  --golden-amber:   #E2A323; /* Golden yellow / amber */
+  --orange-gold:    #E7AA56; /* Warm orange-gold */
+  --dark-gold:      #9A690E; /* Dark gold / bronze */
+  --light-gray:     #A09D9D; /* Light gray / metal */
+  --medium-gray:    #5E5C57; /* Medium gray */
+  --dark-blue-gray: #263948; /* Dark blue-gray (shadows/sky) */
+}
+
+
+https://www.patreon.com/cw/CaffeineOppsumGames
