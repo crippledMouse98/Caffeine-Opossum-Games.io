@@ -399,41 +399,52 @@ iframe {
 
 /* ---------- Car variants container ---------- */
 .car-container {
-  max-width: 800px;
-  margin: 24px auto;
-  padding: 20px 18px;
-  background: #000000a5;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 14px 45px rgba(0, 0, 0, 0.75);
+  max-width: 900px;          /* slightly wider than the specs box so 4 cars fit nicely */
+  margin: 28px auto 40px;
+  padding: 16px;
+  background: transparent;   /* remove the heavy panel so it doesn’t fight the page */
+  border: none;
+  box-shadow: none;
 }
 
 .car-container .screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* force 4 equal columns */
+  gap: 16px;
   margin-top: 0;
-  gap: 18px;
+  justify-items: center;
 }
 
 .car-container .screenshot {
-  max-width: 380px;          /* keeps the car icons a sensible size */
-  border-radius: 5px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;          /* ← change this to make them bigger/smaller */
+  height: auto;
+  margin: 0;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: #0a0a0c;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-container .screenshot:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75);
+  border-color: rgba(219, 16, 11, 0.5);
 }
 
 /* ---------- Screenshots ---------- */
 .screenshot {
   display: block;
-  max-width: 300%;
+  max-width: 100%;           /* was 300% – broken */
   height: auto;
   margin: 0 auto 24px auto;
-  border: 2px #000000a5;
-  border-radius: 5px;
-  background: #00000007;
+  border: 2px solid var(--border);   /* was missing "solid" */
+  border-radius: 10px;
+  background: #0a0a0c;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-
 .screenshot:hover {
   transform: scale(1.025);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
