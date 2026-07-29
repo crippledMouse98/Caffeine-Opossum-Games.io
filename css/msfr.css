@@ -536,9 +536,9 @@ iframe {
   max-width: 100%;
   height: auto;
   margin: 0 auto 24px auto;
-  border: 2px solid var(--border);
+  border: 2px #0000;
   border-radius: 10px;
-  background: #0a0a0c;
+  background: #0a0a0c64;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
@@ -593,7 +593,7 @@ iframe {
 
 .thumb-label {
   position: absolute;
-  left: 86px;
+  left: 128px;
   top: 50%;
   transform: translateY(-50%) translateX(-8px);
   color: var(--bright-yellow);
