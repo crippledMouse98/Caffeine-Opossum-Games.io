@@ -1,10 +1,11 @@
 /* ==============================
-   Caffeine Opossum Games  CSS Source
+   Caffeine Opossum Games CSS Source
    Palette: Racing Red + Golden Yellow + Deep Black
    Written By: Jeeves https://github.com/JeevesGB
    © 2026 JejCo
    Improved for readability + responsive scaling
-  ============================== */
+   ============================== */
+
 :root {
   --black:          #000000;
   --near-black:     #101012;
@@ -19,7 +20,7 @@
   --medium-gray:    #5E5C57;
   --dark-blue-gray: #263948;
 
-  /* Semantic aliases - improved contrast */
+  /* Semantic aliases */
   --bg:             #0a0a0c;
   --panel:          #1a1a1f;
   --panel-dark:     #121216;
@@ -31,6 +32,8 @@
   --accent-hover:   var(--bright-yellow);
   --glow:           rgba(219, 16, 11, 0.55);
   --shadow:         rgba(0, 0, 0, 0.75);
+
+  --mute-size:      80px;   /* scale the mute button */
 }
 
 *,
@@ -39,17 +42,19 @@
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 5;
-  padding: 5;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
+/* ---------- Parallax background ---------- */
 .parallax-bg {
   position: fixed;
-  top: -20vh;             /* start a bit above the viewport */
+  top: -20vh;
   left: 0;
   width: 100%;
-  height: 250vh;          /* plenty of extra height */
+  height: 250vh;
   background-color: #0a0a0c;
   background-image:
     radial-gradient(circle at 50% 20%, rgba(25, 4, 4, 0.70) 0%, rgba(8, 8, 10, 0.044) 70%),
@@ -72,6 +77,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ---------- Play button ---------- */
 .play-btn {
   position: fixed;
   bottom: 2rem;
@@ -81,7 +87,7 @@ body {
 }
 
 .play-btn img {
-  width: 64px;               /* ← change this number to resize */
+  width: 64px;
   height: auto;
   display: block;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
@@ -91,17 +97,11 @@ body {
   transform: scale(1.1);
 }
 
-
-
-/* ---------- Mute Button ---------- */
-:root {
-  --mute-size: 50px;   /* ← change this value to scale the button */
-}
-
+/* ---------- Mute button ---------- */
 .mute-btn {
   position: fixed;
-  top: 22px;
-  left: 86px;          /* sits nicely next to the back button */
+  top: 35px;
+  left: 130px;
   z-index: 100;
   width: var(--mute-size);
   height: var(--mute-size);
@@ -114,7 +114,6 @@ body {
   align-items: center;
   justify-content: center;
   transition: transform 0.25s ease;
-  box-shadow: none;
 }
 
 .mute-btn img {
@@ -133,32 +132,130 @@ body {
   transform: scale(1.1);
 }
 
+/* ---------- Back button ---------- */
+.back-btn {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  text-decoration: none;
+}
+
+.back-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-3px);
+}
+
+.back-btn:hover img {
+  transform: scale(1.1);
+}
+
 /* ---------- Logo ---------- */
 .logo {
   display: block;
   max-width: 680px;
   width: 100%;
   height: auto;
-  margin: 20px auto 20px auto;
+  margin: 20px auto;
   border: none;
   box-shadow: none;
   background: transparent;
-  transition: fixed;
 }
-
 
 /* ---------- Containers ---------- */
 .container {
   max-width: 800px;
   margin: 10px auto;
-  padding: 10px 10px;
+  padding: 10px;
   background: #00000093;
-  /*background: linear-gradient(180deg, var(--panel) 0%, var(--panel-dark) 100%);*/
-  border: 1px #000000f7 var(--border);
+  border: 1px solid rgba(0, 0, 0, 0.97);
   border-radius: 4px;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
     0 14px 45px rgba(0, 0, 0, 0.75);
+}
+
+/* ---------- Car thumbnails (archive links) ---------- */
+.carthumb-container {
+  max-width: 800px;
+  margin: 28px auto 40px;
+  padding: 24px 20px 28px;
+  background: #00000093;
+  border: 1px solid rgba(0, 0, 0, 0.97);
+  border-radius: 8px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 14px 45px rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+.carthumb-container .title {
+  font-size: 1.6rem;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.12em;
+}
+
+.carthumb-container .title::after {
+  width: min(280px, 60%);
+  margin-top: 10px;
+}
+
+/* Layout for the car cards */
+.carthumb-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px 4px;
+}
+
+.carthumb-container .title {
+  flex: 0 0 100%;   /* title always on its own row */
+}
+
+.carthumb-container .archive-card {
+  display: inline-block;
+  margin: 8px 6px;
+  padding: 1px;
+  background: transparent;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.carthumb-container .archive-card:hover {
+  transform: translateY(-6px);
+  background: rgba(15, 15, 18, 0.45);
+}
+
+.carthumb-container .archive-card img {
+  display: block;
+  max-width: 300px;   /* ← change this to scale the car thumbs */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.carthumb-container .archive-card:hover img {
+  transform: scale(1.06);
 }
 
 /* ---------- Titles ---------- */
@@ -171,8 +268,6 @@ body {
   text-transform: uppercase;
   margin: 0 0 26px 0;
   position: relative;
-
-  /* Gradient text */
   background: linear-gradient(
     to right,
     var(--racing-red),
@@ -183,8 +278,6 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-
-  /* Optional glow */
   filter: drop-shadow(0 0 8px rgba(219, 16, 11, 0.45));
 }
 
@@ -205,13 +298,14 @@ body {
   box-shadow: 0 0 12px var(--glow);
 }
 
-/* ---------- Body text readability ---------- */
+/* ---------- Body text ---------- */
 .container p {
   margin: 0 0 1.15em 0;
   font-size: 1.08rem;
   line-height: 1.75;
   color: var(--text);
 }
+
 .container p:last-child {
   margin-bottom: 0;
 }
@@ -252,7 +346,7 @@ iframe {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
 }
 
-/* PATREON */
+/* ---------- Patreon ---------- */
 .tier-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -278,25 +372,26 @@ iframe {
 .tier-card h3 {
   margin: 0.5rem 0 0.75rem;
   font-size: 1.15rem;
-  color: #ffcc00; /* or whatever accent colour you use */
+  color: #ffcc00;
 }
 
 .tier-card p {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: var(--gt-muted, #ccc);
+  color: var(--muted);
   margin: 0;
 }
+
 .patreon-btn {
   display: inline-block;
-  background: #ff424d;               /* Official Patreon red */
+  background: #ff424d;
   color: white !important;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.85rem 2.2rem;
   border-radius: 8px;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(255, 66, 77, 0.25);
 }
 
@@ -306,7 +401,7 @@ iframe {
   box-shadow: 0 6px 16px rgba(255, 66, 77, 0.35);
 }
 
-/* ---------- Side Socials (right) ---------- */
+/* ---------- Side socials (right) ---------- */
 .side-socials {
   position: fixed;
   top: 100px;
@@ -327,7 +422,6 @@ iframe {
   border: none;
   border-radius: 10px;
   background: transparent;
-  box-shadow: none;
   transition: transform 0.25s ease;
   overflow: visible;
   text-decoration: none;
@@ -354,7 +448,7 @@ iframe {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
@@ -371,45 +465,48 @@ iframe {
   transform: translateY(-50%) translateX(0);
 }
 
-/* ---------- Cars grid ---------- */
+/* ---------- Archive cards ---------- */
 .archive-card {
   display: inline-block;
   margin: 12px 10px;
   background: transparent;
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
   padding: 10px;
 }
+
 .archive-card:hover {
   transform: translateY(-6px);
   background: rgba(15, 15, 18, 0.4);
 }
+
 .archive-card img {
   display: block;
-  max-width: 140px;   /* ← this controls the size */
+  max-width: 140px;
   width: 100%;
   height: auto;
   margin: 0 auto;
   transition: transform 0.3s ease;
 }
+
 .archive-card:hover img {
   transform: scale(1.06);
 }
 
-/* ---------- Car variants container ---------- */
+/* ---------- Car variants ---------- */
 .car-container {
-  max-width: 1100px;          /* slightly wider than the specs box so 4 cars fit nicely */
+  max-width: 1100px;
   margin: 28px auto 40px;
   padding: 16px;
-  background: transparent;   /* remove the heavy panel so it doesn’t fight the page */
+  background: transparent;
   border: none;
   box-shadow: none;
 }
 
 .car-container .screenshot-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);   /* force 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 0;
   justify-items: center;
@@ -417,14 +514,14 @@ iframe {
 
 .car-container .screenshot {
   width: 100%;
-  max-width: 260px;          /* ← change this to make them bigger/smaller */
+  max-width: 260px;
   height: auto;
   margin: 0;
   border: 2px solid var(--border);
   border-radius: 10px;
   background: #0a0a0c;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .car-container .screenshot:hover {
@@ -436,15 +533,16 @@ iframe {
 /* ---------- Screenshots ---------- */
 .screenshot {
   display: block;
-  max-width: 100%;           /* was 300% – broken */
+  max-width: 100%;
   height: auto;
   margin: 0 auto 24px auto;
-  border: 2px solid var(--border);   /* was missing "solid" */
+  border: 2px solid var(--border);
   border-radius: 10px;
   background: #0a0a0c;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
+
 .screenshot:hover {
   transform: scale(1.025);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
@@ -462,7 +560,7 @@ iframe {
   margin-bottom: 0;
 }
 
-/* ---------- Side Thumbnails ---------- */
+/* ---------- Side thumbnails (left) ---------- */
 .side-thumbs {
   position: fixed;
   top: 100px;
@@ -474,12 +572,12 @@ iframe {
 }
 
 .side-thumb {
-  position: relative;          
+  position: relative;
   display: block;
-  width: 54px;
-  height: 54px;
+  width: 110px;
+  height: 110px;
   border-radius: 10px;
-  overflow: visible;           
+  overflow: visible;
   transition: transform 0.25s ease;
   background: transparent;
 }
@@ -495,28 +593,18 @@ iframe {
 
 .thumb-label {
   position: absolute;
-  left: 68px;
+  left: 86px;
   top: 50%;
   transform: translateY(-50%) translateX(-8px);
-  background: transparent;
   color: var(--bright-yellow);
   font-size: 0.95rem;
   font-weight: 600;
   padding: 6px 10px;
-  border-radius: 0;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.25s ease;
-  border: none;
-  box-shadow: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
-}
-
-/* Show the label on hover */
-.side-thumb:hover .thumb-label {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
 }
 
 .side-thumb:hover {
@@ -527,12 +615,18 @@ iframe {
   transform: scale(1.08);
 }
 
+.side-thumb:hover .thumb-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
 /* ---------- Links ---------- */
 a {
   color: var(--bright-yellow);
   text-decoration: none;
   transition: color 0.2s ease;
 }
+
 a:hover {
   color: var(--racing-red);
 }
@@ -545,43 +639,7 @@ footer {
   font-size: 0.95rem;
 }
 
-/* ---------- Back Button ---------- */
-.back-btn {
-  position: fixed;
-  top: 22px;
-  left: 22px;
-  z-index: 100;
-  width: 100px;
-  height: 100px;
-  padding: 0;
-  border: none;
-  border-radius: 12px;
-  background: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.25s ease;
-  box-shadow: none;
-  text-decoration: none;
-}
-
-.back-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.25s ease;
-}
-
-.back-btn:hover {
-  transform: translateY(-3px);
-}
-
-.back-btn:hover img {
-  transform: scale(1.1);
-}
-
+/* ========== Responsive ========== */
 
 /* Tablets */
 @media (max-width: 900px) {
@@ -589,105 +647,150 @@ footer {
     margin: 28px 18px;
     padding: 30px 28px;
   }
+
   .title {
     font-size: 2.05rem;
   }
+
   .logo {
     width: 90%;
     max-width: 560px;
   }
+
+  .car-container .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .car-container .screenshot {
+    max-width: 240px;
+  }
 }
 
-/* Phones */
+/* Small tablets / large phones */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
     background-position: center top;
   }
-}
+
 .mute-btn {
     top: 14px;
-    left: 70px;          
+    left: 70px;   /* back-btn is only 46px wide here, so 70px is fine */
   }
-.back-btn {
-  top: 14px;
-  left: 14px;
-  width: 46px;
-  height: 46px;
-}
 
-@media (max-width: 600px) {
-  html {
-    font-size: 15px;
-  }
-  body {
-    font-size: 1rem;
-  }
-  .container {
-    margin: 20px 12px;
-    padding: 24px 20px;
-    border-radius: 12px;
-  }
-  .title {
-    font-size: 1.75rem;
-    letter-spacing: 0.06em;
-  }
-  .title::after {
-    width: 80%;
-  }
-  .container p {
-    font-size: 1.02rem;
-  }
-  .logo {
-    width: 100%;
-    margin: 28px auto 22px auto;
-  }
-  video {
-    margin: 18px auto;
-    border-radius: 10px;
-  }
-  iframe {
-    height: 155px;
-  }
-  .archive-card {
-    margin: 8px 6px;
-  }
-  .archive-card img {
-    max-width: 110px;
-  }
   .back-btn {
     top: 14px;
     left: 14px;
     width: 46px;
     height: 46px;
   }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .container {
+    margin: 20px 12px;
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    letter-spacing: 0.06em;
+  }
+
+  .title::after {
+    width: 80%;
+  }
+
+  .container p {
+    font-size: 1.02rem;
+  }
+
+  .logo {
+    width: 100%;
+    margin: 28px auto 22px;
+  }
+
+  video {
+    margin: 18px auto;
+    border-radius: 10px;
+  }
+
+  iframe {
+    height: 155px;
+  }
+
+  .archive-card {
+    margin: 8px 6px;
+  }
+
+  .archive-card img {
+    max-width: 110px;
+  }
+
+  .back-btn {
+    top: 14px;
+    left: 14px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .mute-btn {
+    top: 14px;
+    left: 70px;
+  }
+
   footer {
     padding: 30px 16px 24px;
     font-size: 0.9rem;
   }
-    .side-socials {
+
+  .side-socials {
     top: auto;
     bottom: 20px;
     right: 12px;
     gap: 10px;
   }
+
   .side-social {
     width: 46px;
     height: 46px;
   }
-  .side-social-icon {
-    font-size: 0.75rem;
-  }
+
   .side-social-label {
     display: none;
   }
+
+  .car-container .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .car-container .screenshot {
+    max-width: 160px;
+  }
 }
 
+/* Very small phones */
 @media (max-width: 380px) {
   .title {
     font-size: 1.55rem;
   }
+
   .container {
     padding: 20px 16px;
+  }
+
+  .car-container .screenshot-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
