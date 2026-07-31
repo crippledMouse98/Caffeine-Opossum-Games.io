@@ -14,72 +14,120 @@
 <body>
         <!--  ADD FOR PARALLAX TO WORK  -->
         <div class="parallax-bg"></div>
+
             <a href="../index.html" class="back-btn" title="Go Back">   <img src="../img/msc/gbck.png" alt="Back">     </a>
+
                 <div class="side-socials">
+
                 <a href="https://www.youtube.com/@MISFIRE98" target="_blank" rel="noopener noreferrer" class="side-social">
+
                     <img src="../img/util/Youtube Icon.png" alt="YouTube">
+
                     <span class="side-social-label">YouTube</span>
+
                 </a>
+
                 <a href="https://discord.gg/SP8hpWZaHq" target="_blank" rel="noopener noreferrer" class="side-social">
+
                     <img src="../img/util/Discord Icon.png" alt="Discord">
+
                     <span class="side-social-label">Discord</span>
+
                 </a>
+
                 <a href="https://www.patreon.com/cw/CaffeineOppsumGames" target="_blank" rel="noopener noreferrer" class="side-social">
+
                     <img src="../img/util/Patreon.png" alt="Patreon">
+
                     <span class="side-social-label">Patreon</span>
+
                 </a>
+
                 </div>
 
-        <!-- Background Music -->
+<!-- Background Music -->
         <audio id="bg-music" loop preload="auto">
+
         <source src="../snd/bgm.mp3" type="audio/mpeg">  
+
         </audio>
 
-        <!-- Mute / Play Button -->
+<!-- Mute / Play Button -->
         <button id="mute-btn" class="mute-btn" title="Mute / Unmute">
+
         <img id="mute-icon" src="../img/util/play.png" alt="Sound">
+
         </button>
+
 
     <img src="../img/logos/msfr2lgo.png" alt="Missfire" class="logo">
 
-        <!--    <video controls width=600><source src="img/msfr1/lowres.mp4" type="video/mp4"></video>  -->
+<!--    <video controls width=600><source src="img/msfr1/lowres.mp4" type="video/mp4"></video>  -->
+
         <video controls>
+
             <source src="../img/msfr2/indev/Unity_n3acPIeeBx.mp4" type="video/mp4">
+
         </video>
 
-            <!-- About -->
+<!-- About -->
             <div class="container">
+
                 <p class="title">   <strong>  COMING SOON!  </strong>   </p>
+
                     <iframe
+
                         src="https://www.youtube.com/embed/4T-Ih8HtHmc"
+
                         title="YouTube video"
+
                         style="max-width: 720px; height: 405px;"
+
                         frameborder="0"
+
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
                         referrerpolicy="strict-origin-when-cross-origin"
+
                         allowfullscreen>
+
                     </iframe>
+
             </div>
   
-                <!-- screenshots -->
+<!-- Screenshots -->
             <div class="container">
+
                 <p class="title">   <strong>  UNDER CONSTRUCTION  </strong>   </p>
+
             </div>
 
 
-<footer style="text-align:center; padding: 20px; color: var(--gt-muted);">
-  © 2026 Caffeine Opossum Games<br>
-  All rights reserved.<br>
-</footer>
 
-            <!--  PARALLAX SCRIPT  -->
-                <script>
-                    const bg = document.querySelector('.parallax-bg');
+<!--  Footer  -->      
+        <footer style="text-align:center; padding: 20px; color: var(--gt-muted);">
 
-                        window.addEventListener('scroll', function() {
-                        const scrolled = window.pageYOffset;
-                        bg.style.transform = 'translate3d(0, ' + (scrolled * -0.4) + 'px, 0)';
-                        });
-                </script>
+            © 2026 Caffeine Opossum Games<br>
+
+            All rights reserved.<br>
+
+        </footer>
+
+<!--  PARALLAX SCRIPT  -->
+        <script>
+
+            const bg = document.querySelector('.parallax-bg');
+
+                window.addEventListener('scroll', function() {
+                            
+                const scrolled = window.pageYOffset;
+
+                bg.style.transform = 'translate3d(0, ' + (scrolled * -0.4) + 'px, 0)';
+
+                });
+
+        </script>
+
     </body>
+
 </html>
