@@ -33,7 +33,7 @@
   --glow:           rgba(219, 16, 11, 0.55);
   --shadow:         rgba(0, 0, 0, 0.75);
 
-  --mute-size:      80px;   /* scale the mute button */
+  --mute-size:      80px;
 }
 
 *,
@@ -54,7 +54,7 @@ body {
   top: -20vh;
   left: 0;
   width: 100%;
-  height: 600vh;          /* was 250vh – now covers long screenshot pages even with parallax transform */
+  height: 600vh; /* tall enough for long screenshot pages + parallax transform */
   background-color: #0a0a0c;
   background-image:
     radial-gradient(circle at 50% 20%, rgba(25, 4, 4, 0.70) 0%, rgba(8, 8, 10, 0.044) 70%),
@@ -205,21 +205,6 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
     0 14px 45px rgba(0, 0, 0, 0.75);
   text-align: center;
-}
-
-.carthumb-container .title {
-  font-size: 1.6rem;
-  margin: 0 0 20px 0;
-  letter-spacing: 0.12em;
-}
-
-.carthumb-container .title::after {
-  width: min(280px, 60%);
-  margin-top: 10px;
-}
-
-/* Layout for the car cards */
-.carthumb-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -228,7 +213,15 @@ body {
 }
 
 .carthumb-container .title {
-  flex: 0 0 100%;   /* title always on its own row */
+  font-size: 1.6rem;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.12em;
+  flex: 0 0 100%;
+}
+
+.carthumb-container .title::after {
+  width: min(280px, 60%);
+  margin-top: 10px;
 }
 
 .carthumb-container .archive-card {
@@ -247,7 +240,7 @@ body {
 
 .carthumb-container .archive-card img {
   display: block;
-  max-width: 300px;   /* ← change this to scale the car thumbs */
+  max-width: 300px;
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -256,6 +249,139 @@ body {
 
 .carthumb-container .archive-card:hover img {
   transform: scale(1.06);
+}
+
+/* ========== Screenshot Gallery / Lightbox ========== */
+.gallery-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.gallery-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-img {
+  max-width: 92vw;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(253, 219, 54, 0.25);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.gallery-counter {
+  margin-top: 14px;
+  color: var(--bright-yellow);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.gallery-close,
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(253, 219, 54, 0.35);
+  color: var(--bright-yellow);
+  font-size: 1.8rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  z-index: 10;
+  user-select: none;
+}
+
+.gallery-close:hover,
+.gallery-prev:hover,
+.gallery-next:hover {
+  background: rgba(219, 16, 11, 0.75);
+  border-color: var(--bright-yellow);
+  transform: scale(1.08);
+}
+
+.gallery-close {
+  top: 18px;
+  right: 18px;
+  font-size: 1.6rem;
+}
+
+.gallery-prev {
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery-next {
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Make screenshots feel clickable */
+.screenshot-grid .screenshot {
+  cursor: zoom-in;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .gallery-close,
+  .gallery-prev,
+  .gallery-next {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .gallery-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .gallery-prev {
+    left: 8px;
+  }
+
+  .gallery-next {
+    right: 8px;
+  }
+
+  .gallery-img {
+    max-height: 72vh;
+  }
 }
 
 /* ---------- Titles ---------- */
@@ -341,7 +467,7 @@ iframe {
   width: 100%;
   max-width: 556px;
   height: 171px;
-  border: 2px #00000000;
+  border: 2px solid transparent;
   border-radius: 5px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
 }
@@ -412,11 +538,11 @@ iframe {
   color: #eee;
   font-family: system-ui, -apple-system, sans-serif;
   transition: border-color 0.2s, transform 0.2s;
-  margin: 2rem auto;   /* ← was 2rem 0 */
+  margin: 2rem auto;
 }
 
 .patreon-card:hover {
-  border-color: #f96854; /* Patreon orange */
+  border-color: #f96854;
   transform: translateY(-2px);
 }
 
@@ -606,7 +732,7 @@ iframe {
   max-width: 100%;
   height: auto;
   margin: 0 auto 4px auto;
-  border: 2px #0000;
+  border: 2px solid transparent;
   border-radius: 2px;
   background: #0a0a0c64;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
@@ -743,9 +869,9 @@ footer {
     background-position: center top;
   }
 
-.mute-btn {
+  .mute-btn {
     top: 14px;
-    left: 70px;   /* back-btn is only 46px wide here, so 70px is fine */
+    left: 70px;
   }
 
   .back-btn {
@@ -817,16 +943,13 @@ footer {
   .mute-btn {
     top: 14px;
     left: 70px;
-  }
-
-  footer {
-    padding: 30px 16px 24px;
-    font-size: 0.9rem;
+    width: 52px;
+    height: 52px;
   }
 
   .side-socials {
     top: auto;
-    bottom: 110px;        /* was 20px  */
+    bottom: 110px;
     right: 12px;
     gap: 10px;
   }
@@ -844,21 +967,13 @@ footer {
     bottom: 1.2rem;
     right: 1.2rem;
   }
+
   .play-btn img {
-    width: 52px;          /* slightly smaller on phones */
+    width: 52px;
   }
 
-  /* Mute */
-  .mute-btn {
-    top: 14px;
-    left: 70px;
-    width: 52px;          
-    height: 52px;
-  }
-
-  /* Extra bottom padding so footer content is never under the fixed icons */
   footer {
-    padding: 30px 16px 140px;   /* was 30px 16px 24px */
+    padding: 30px 16px 140px; /* extra bottom space so fixed icons never cover footer content */
     font-size: 0.9rem;
   }
 
@@ -890,12 +1005,13 @@ footer {
     bottom: 120px;
     right: 8px;
   }
+
   .play-btn {
     bottom: 1rem;
     right: 1rem;
   }
+
   .play-btn img {
     width: 48px;
   }
-
 }
