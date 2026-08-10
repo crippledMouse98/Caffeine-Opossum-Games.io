@@ -9,21 +9,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caffeine Opossum Games  - Misfire 1 - Guardrail</title>
-  <link rel="stylesheet" href="../css/msfr.css">
+  <link rel="stylesheet" href="../css/msfr__.css">
 </head>
 <body>
         <!--  ADD FOR PARALLAX TO WORK  -->
         <div class="parallax-bg"></div>
         <!--    Go Back     -->
-        <a href="msfr1.html" class="back-btn" title="Go Back">   <img src="../img/msc/gbck.png" alt="Back">     </a>
+        <a href="msfr2.html" class="back-btn" title="Go Back">   <img src="../img/msc/gbck.png" alt="Back">     </a>
         <!-- Side Thumbnails -->
         <nav class="side-thumbs">
-        <a href="stalker.html" class="side-thumb" title="Stalker">
-            <img src="../img/msfr1/cars/car0ico.png" alt="Stalker">
+        <a href="barricade.html" class="side-thumb" title="Barricade">
+            <img src="img/barricade/Barricade_001.png" alt="Barricade">
             <span class="thumb-label">Stalker</span>
         </a>
 
-        <a href="guardrail.html" class="side-thumb" title="Guardrail">
+        <!--<a href="guardrail.html" class="side-thumb" title="Guardrail">
             <img src="../img/msfr1/cars/car5ico.png" alt="Guardrail">
             <span class="thumb-label">Guardrail</span>
         </a>
@@ -37,7 +37,7 @@
             <img src="../img/msfr1/cars/car13ico.png" alt="Annihilator">
             <span class="thumb-label">Annihilator</span>
         </a>
-        </nav>
+        </nav>-->
 
 
 
@@ -119,15 +119,92 @@
   All rights reserved.<br>
 </footer>
 
-            <!--  Parallax Script  -->
-                <script>
-                    const bg = document.querySelector('.parallax-bg');
+            <!--   PLAY // PAUSE SCRIPT    -->
+            <script> 
 
-                        window.addEventListener('scroll', function() {
-                        const scrolled = window.pageYOffset;
-                        bg.style.transform = 'translate3d(0, ' + (scrolled * -0.4) + 'px, 0)';
-                        });
-                </script>
+                    const audio = document.getElementById('bg-music');
+
+                    const muteBtn = document.getElementById('mute-btn');
+
+                    const muteIcon = document.getElementById('mute-icon');
+
+                    // Comfortable volume
+                    audio.volume = 0.4;
+
+                    // Paths to your images
+                    const playImg = '../img/util/play.png';
+                    
+                    const muteImg = '../img/util/mute.png';
+
+                    // Try to autoplay
+                    window.addEventListener('load', () => {
+
+                        const playPromise = audio.play();
+
+                        if (playPromise !== undefined) {
+
+                        playPromise
+
+                            .then(() => {
+
+                            // Successfully started playing
+                            muteIcon.src = playImg;
+
+                            })
+
+                            .catch(() => {
+
+                            // Autoplay blocked – show play icon so user can start it
+                            muteIcon.src = playImg;
+
+                            });
+
+                        }
+
+                    });
+
+                    // Button click handler
+
+                    muteBtn.addEventListener('click', () => {
+
+                        if (audio.paused) {
+
+                        // Start playing
+
+                        audio.play();
+
+                        audio.muted = false;
+
+                        muteIcon.src = playImg;
+
+                        } else {
+
+                        // Toggle mute
+
+                        audio.muted = !audio.muted;
+
+                        muteIcon.src = audio.muted ? muteImg : playImg;
+
+                        }
+
+                    });
+
+            </script>
+
+            <!--  Parallax Script  -->
+            <script>
+
+                const bg = document.querySelector('.parallax-bg');
+
+                    window.addEventListener('scroll', function() {
+
+                    const scrolled = window.pageYOffset;
+
+                    bg.style.transform = 'translate3d(0, ' + (scrolled * -0.4) + 'px, 0)';
+
+                    });
+
+            </script>
                         <!--    JAVASCRIPT      -->
                 <script src="/js/main.js" defer></script>
                 <script src="../js/gallery.js" defer></script>
