@@ -1,311 +1,145 @@
 <!DOCTYPE html>
-<!-- /* ==============================
-   Caffeine Opossum Games  HTML Source 
-   Written By: Jeeves https://github.com/JeevesGB
-   © 2026 JejCo  |  © 2026  Caffeine Opossum Games 
-   ============================== */ -->
+<!--
+  Caffeine Opossum Games — Misfire 2
+  Written By: Jeeves https://github.com/JeevesGB
+  © 2026 JejCo | © 2026 Caffeine Opossum Games
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caffeine Opossum Games  - Misfire 2</title>
+  <title>Caffeine Opossum Games — Misfire 2</title>
   <link rel="stylesheet" href="../css/msfr__.css">
 </head>
 <body>
-    <!--  ADD FOR PARALLAX TO WORK  -->
-    <div class="parallax-bg"></div>
+  <div class="parallax-bg"></div>
 
-        <!-- Go Back -->
-        <a href="../index.html" class="back-btn" title="Go Back">   <img src="../img/msc/gbck.png" alt="Back">     </a>
-            
-            <!-- Socails Sidebar -->
-            <div class="side-socials">
+  <a href="../index.html" class="back-btn" title="Go Back">
+    <img src="../img/msc/gbck.png" alt="Back">
+  </a>
 
-                <a href="https://www.youtube.com/@MISFIRE98" target="_blank" rel="noopener noreferrer" class="side-social">
+  <div class="side-socials">
+    <a href="https://www.youtube.com/@MISFIRE98" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="../img/util/Youtube Icon.png" alt="YouTube">
+      <span class="side-social-label">YouTube</span>
+    </a>
+    <a href="https://discord.gg/SP8hpWZaHq" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="../img/util/Discord Icon.png" alt="Discord">
+      <span class="side-social-label">Discord</span>
+    </a>
+    <a href="https://www.patreon.com/cw/CaffeineOppsumGames" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="../img/util/Patreon.png" alt="Patreon">
+      <span class="side-social-label">Patreon</span>
+    </a>
+  </div>
 
-                    <img src="../img/util/Youtube Icon.png" alt="YouTube">
+  <audio id="bg-music" loop preload="auto">
+    <source src="../snd/bgm.mp3" type="audio/mpeg">
+  </audio>
+  <button id="mute-btn" class="mute-btn" title="Mute / Unmute">
+    <img id="mute-icon" src="../img/util/play.png" alt="Sound">
+  </button>
 
-                        <span class="side-social-label">YouTube</span>
+  <main class="page">
 
-                </a>
-
-                <a href="https://discord.gg/SP8hpWZaHq" target="_blank" rel="noopener noreferrer" class="side-social">
-
-                    <img src="../img/util/Discord Icon.png" alt="Discord">
-
-                        <span class="side-social-label">Discord</span>
-
-                </a>
-
-                <a href="https://www.patreon.com/cw/CaffeineOppsumGames" target="_blank" rel="noopener noreferrer" class="side-social">
-
-                    <img src="../img/util/Patreon.png" alt="Patreon">
-
-                        <span class="side-social-label">Patreon</span>
-
-                </a>
-
-            </div>
-
-        <!-- Background Music -->
-        <audio id="bg-music" loop preload="auto">
-
-            <source src="../snd/bgm.mp3" type="audio/mpeg">  <!-- ← change this to og missfire 1 music -->
-
-        </audio>
-
-        <!-- Mute / Play Button -->
-        <button id="mute-btn" class="mute-btn" title="Mute / Unmute">
-
-            <img id="mute-icon" src="../img/util/play.png" alt="Sound">
-
-        </button>
-
-    <img src="../img/logos/msfr2lgo.png" alt="Missfire" class="logo">
-
-<!-- Top Video -->
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <img src="../img/logos/msfr2lgo.png" alt="Misfire 2" class="logo">
+        <p class="hero-tag">
+          In development. Version 0.01 gameplay reveal is live.
+          <strong>More cars, arenas, and chaos incoming.</strong>
+        </p>
+      </div>
+      <div class="hero-media">
         <video controls>
-
-            <source src="../img/msfr2/indev/Unity_n3acPIeeBx.mp4" type="video/mp4">
-
+          <source src="../img/msfr2/indev/Unity_n3acPIeeBx.mp4" type="video/mp4">
         </video>
-
-<!-- About -->
-            <!--<div class="container">
-
-                <p class="title"><strong>About</strong></p>
-
-                <i>
-
-                    <p>
-
-                            Are you tired of the same old driving games?
-
-                        <p></p>
-
-                            Need a little excitement in your life?
-                            
-                        <p></p>
-
-                            Has your wife left you and took the kids?
-
-                        <p></p>
-
-                            <strong>Well this game is for you!</strong>
-
-                        <p></p>
-
-                            A throwback to the old demolition derby games where the whole point is to beat the sh1t out of cars, smash your opponents into walls, barrels and bombs to get your point across that you are the best!
-
-                        <p></p>
-
-                            Show this game to your friends! 
-
-                        <p></p>
-
-                            Your local convince store owner! 
-
-                        <p></p>
-
-                            Your wife! (if she is still with you)
-
-                        <p></p>
-
-                            The Postman!
-
-                        <p></p>
-
-                            Unlike big companies all your money goes back into the game and helps me create a bigger and better project! 
-                            all updates will be free and i will never add DLC or special member exclusive content
-                    </p>
-
-                </i>
-
-            </div>-->
-
-<!-- buy link -->
-                    <!--<div class="container">
-
-                        <p class="title">    <strong>    Are you ready for mayhem?    </strong>    </p>
-
-                            <iframe frameborder="0" src="https://itch.io/embed/4160287?border_width=3&amp;bg_color=ffa01b&amp;fg_color=000000&amp;link_color=de0000&amp;border_color=000000" width="556" height="171">
-
-                                <a href="https://32bit-bailey.itch.io/misfire-last-car-standing">
-
-                                    Misfire Last car standing by 32bit_bailey
-
-                                </a>
-
-                            </iframe>
-
-                    </div>-->
-
-  <!---->
-
-<!--  Reveal video  -->
-                <div class="container">
-
-                        <p class="title">   <strong>   Version 0.01 Gameplay Reveal    </strong>   </p>
-
-                        <video controls>
-
-                            <source src="../img/msfr2/indev/Misfire 2 (Version 0.01) gameplay reveal.mp4" type="video/mp4">
-
-                        </video>
-
-                </div>
-
-<!--   Cars   -->
-                <div class="container">
-
-                    <p class="title"> <strong>  Cars  </strong>   </p>
-
-                        <a href="barricade.html" class="archive-card">
-
-                            <img src="img/barricade/Barricade_001.png" alt="Barricade">
-
-                        </a>
-
-                </div>
-
-<!--   Arenas   -->
-                <div class="container">
-
-                    <p class="title"> <strong>  [REDACTED]  </strong>   </p>
-
-                        <!--<a href="../tracks/mfr2/---.html" class="archive-card">
-
-                            <img src="../img/level/mfr2/---" alt="1">
-
-                        </a>-->
-
-                </div>
-
-
-<!-- Screenshots -->
-
-                    <div class="container">
-
-                        <p class="title"> <strong>  Screenshots </strong>   </p>
-
-                        <div class="screenshot-grid">
-
-                            <img src="../img/msfr2/teaser_shot_2.png" alt="Screenshot 0" class="screenshot">
-                            <img src="../img/msfr2/Misfire 2 Screenshot (1).png" alt="Screenshot 1" class="screenshot">
-                            <img src="../img/msfr2/Misfire 2 Screenshot (2).png" alt="Screenshot 2" class="screenshot">
-                            <img src="../img/msfr2/Misfire 2 Screenshot (3).png" alt="Screenshot 3" class="screenshot">
-                            <img src="img/screenshots/image-1.png" alt="REDACTED"       class="screenshot">
-                            <img src="img/screenshots/image-2.png" alt="REDACTED"       class="screenshot">
-                            <img src="img/screenshots/image-3.png" alt="REDACTED"       class="screenshot">
-                            <img src="img/screenshots/image-4.png" alt="REDACTED"       class="screenshot">
-                            <img src="img/screenshots/image-5.png" alt="REDACTED"       class="screenshot">
-
-                        </div>
-
-                    </div>
-
-<!--    JAVASCRIPT      -->
-
-            <footer style="text-align:center; padding: 20px; color: var(--gt-muted);">
-
-                © 2026 Caffeine Opossum Games   <br>    All rights reserved.    <br>
-
-                    <a href="../../LICENSE" style="color: var(--bright-yellow);">Licence</a>
-
-            </footer>
-
-            <!--   PLAY // PAUSE SCRIPT    -->
-            <script> 
-
-                    const audio = document.getElementById('bg-music');
-
-                    const muteBtn = document.getElementById('mute-btn');
-
-                    const muteIcon = document.getElementById('mute-icon');
-
-                    // Comfortable volume
-                    audio.volume = 0.4;
-
-                    // Paths to your images
-                    const playImg = '../img/util/play.png';
-                    
-                    const muteImg = '../img/util/mute.png';
-
-                    // Try to autoplay
-                    window.addEventListener('load', () => {
-
-                        const playPromise = audio.play();
-
-                        if (playPromise !== undefined) {
-
-                        playPromise
-
-                            .then(() => {
-
-                            // Successfully started playing
-                            muteIcon.src = playImg;
-
-                            })
-
-                            .catch(() => {
-
-                            // Autoplay blocked – show play icon so user can start it
-                            muteIcon.src = playImg;
-
-                            });
-
-                        }
-
-                    });
-
-                    // Button click handler
-
-                    muteBtn.addEventListener('click', () => {
-
-                        if (audio.paused) {
-
-                        // Start playing
-
-                        audio.play();
-
-                        audio.muted = false;
-
-                        muteIcon.src = playImg;
-
-                        } else {
-
-                        // Toggle mute
-
-                        audio.muted = !audio.muted;
-
-                        muteIcon.src = audio.muted ? muteImg : playImg;
-
-                        }
-
-                    });
-
-            </script>
-
-            <!--  Parallax Script  -->
-            <script>
-
-                const bg = document.querySelector('.parallax-bg');
-
-                    window.addEventListener('scroll', function() {
-
-                    const scrolled = window.pageYOffset;
-
-                    bg.style.transform = 'translate3d(0, ' + (scrolled * -0.4) + 'px, 0)';
-
-                    });
-
-            </script>
-
-        <!--    JAVASCRIPT      -->
-        <script src="../js/main.js" defer></script>
-        <script src="../js/gallery.js" defer></script>
-
-
-    </body>
-
-</html> 
+      </div>
+    </section>
+
+    <!-- BENTO -->
+    <section class="bento">
+      <div class="panel bento-reveal" style="grid-column: span 7;">
+        <p class="title title-left"><strong>Version 0.01 Gameplay Reveal</strong></p>
+        <video controls>
+          <source src="../img/msfr2/indev/Misfire 2 (Version 0.01) gameplay reveal.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="panel bento-cars" style="grid-column: span 5;">
+        <p class="title strip-label"><strong>Cars</strong></p>
+        <div class="card-strip">
+          <a href="barricade.html" class="archive-card">
+            <img src="img/barricade/Barricade_001.png" alt="Barricade">
+          </a>
+        </div>
+      </div>
+
+      <div class="panel bento-arenas" style="grid-column: span 12;">
+        <p class="title strip-label"><strong>[REDACTED]</strong></p>
+        <p style="margin:0; color: var(--muted); text-align:center;">Arenas coming soon.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FULL-BLEED SCREENSHOTS -->
+  <section class="band">
+    <div class="band-inner">
+      <p class="title"><strong>Screenshots</strong></p>
+      <div class="screenshot-grid">
+        <img src="../img/msfr2/teaser_shot_2.png" alt="Screenshot 0" class="screenshot">
+        <img src="../img/msfr2/Misfire 2 Screenshot (1).png" alt="Screenshot 1" class="screenshot">
+        <img src="../img/msfr2/Misfire 2 Screenshot (2).png" alt="Screenshot 2" class="screenshot">
+        <img src="../img/msfr2/Misfire 2 Screenshot (3).png" alt="Screenshot 3" class="screenshot">
+        <img src="img/screenshots/image-1.png" alt="REDACTED" class="screenshot">
+        <img src="img/screenshots/image-2.png" alt="REDACTED" class="screenshot">
+        <img src="img/screenshots/image-3.png" alt="REDACTED" class="screenshot">
+        <img src="img/screenshots/image-4.png" alt="REDACTED" class="screenshot">
+        <img src="img/screenshots/image-5.png" alt="REDACTED" class="screenshot">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Caffeine Opossum Games<br>
+    All rights reserved.<br>
+    <a href="../LICENSE" style="color: var(--bright-yellow);">Licence</a>
+  </footer>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    const muteBtn = document.getElementById('mute-btn');
+    const muteIcon = document.getElementById('mute-icon');
+    audio.volume = 0.4;
+    const playImg = '../img/util/play.png';
+    const muteImg = '../img/util/mute.png';
+    window.addEventListener('load', () => {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => { muteIcon.src = playImg; }).catch(() => { muteIcon.src = playImg; });
+      }
+    });
+    muteBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        audio.muted = false;
+        muteIcon.src = playImg;
+      } else {
+        audio.muted = !audio.muted;
+        muteIcon.src = audio.muted ? muteImg : playImg;
+      }
+    });
+  </script>
+  <script>
+        const bg = document.querySelector('.parallax-bg');
+        window.addEventListener('scroll', function () {
+        const scrolled = window.pageYOffset;
+        bg.style.backgroundPosition = 'center ' + (scrolled * -0.15) + 'px';
+        }, { passive: true });
+  </script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/gallery.js" defer></script>
+</body>
+</html>

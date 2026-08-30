@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-
-  <head>
-
-    <meta charset="UTF-8">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-            <link rel="stylesheet" href="css/msfr__.css">
-
-                <title>:></title>
-  </head>
-
 <html lang="en">
-
-    <body>
-
-        <div class="side-socials">
-
-            <a href="index.html" class="play-btn" title="Play">
-
-                <img src="img/play.png"  max-width="20px" alt="Play">
-
-            </a>
-
-        </div>
-
-        <img src="img/msc/hhhhd2.png" alt=":>">
-
-    </body>
-
-</html>>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/msfr__.css">
+  <title>:></title>
+</head>
+<body>
+  <div class="parallax-bg"></div>
+  <a href="index.html" class="play-btn" title="Back">
+    <img src="img/util/play.png" alt="Back">
+  </a>
+  <main class="page" style="text-align: center; padding-top: 2rem;">
+    <img src="img/msc/hhhhd2.png" alt=":>" style="max-width: min(90vw, 720px); height: auto;">
+  </main>
+  <script>
+    const bg = document.querySelector('.parallax-bg');
+    if (bg) {
+      window.addEventListener('scroll', function () {
+        bg.style.backgroundPosition = 'center ' + (window.pageYOffset * -0.15) + 'px';
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>

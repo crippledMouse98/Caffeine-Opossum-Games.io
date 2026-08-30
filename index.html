@@ -1,155 +1,94 @@
 <!DOCTYPE html>
-<!-- /* ==============================
-   Caffeine Opossum Games  HTML Source 
-   Written By: Jeeves https://github.com/JeevesGB
-   © 2026 JejCo
-   ============================== */ -->
+<!--
+  Caffeine Opossum Games — Home
+  Written By: Jeeves https://github.com/JeevesGB
+  © 2026 JejCo | Caffeine Opossum Games
+-->
 <html lang="en">
-  
-  <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Caffeine Opossum Games </title>
-
-    <link rel="stylesheet" href="css/msfr__.css">
-
-  </head>
-
-  <body>
-
-<!--  ADD FOR PARALLAX TO WORK  -->
-    <div class="parallax-bg"></div>
-
-        <img src="img/logos/cafopo.png" alt="Missfire 1" class="logo">
-
-<!--  Socials Bar  -->
-          <div class="side-socials">
-
-              <a href="https://www.youtube.com/@MISFIRE98" target="_blank" rel="noopener noreferrer" class="side-social">
-
-                <img src="img/util/Youtube Icon.png" alt="YouTube">
-
-                <span class="side-social-label">YouTube</span>
-
-              </a>
-
-              <a href="https://discord.gg/SP8hpWZaHq" target="_blank" rel="noopener noreferrer" class="side-social">
-
-                <img src="img/util/Discord Icon.png" alt="Discord">
-
-                <span class="side-social-label">Discord</span>
-
-              </a>
-
-              <a href="https://www.patreon.com/cw/CaffeineOppsumGames" target="_blank" rel="noopener noreferrer" class="side-social">
-
-                <img src="img/util/Patreon.png" alt="Patreon">
-
-                <span class="side-social-label">Patreon</span>
-
-              </a>
-
-              <a href="him.html" class="play-btn" title="Play">
-
-                <img src="img/util/play.png"  max-width="20px" alt="Play">
-
-              </a>
-
-          </div>
-
-<!--   About   -->
-            <div class="container">
-
-              <p class="title"><strong>About</strong></p>
-
-              <i>
-
-                I'm a solo game developer making games I would want to play with creativity, passion and attention to detail. Heavily focused on driving games.
-
-              </i>
-
-            </div>
-      
-<!--   Games   -->
-              <div class="container">
-
-                <p class="title"> <strong>  Games  </strong>   </p>
-
-                  <a href="mfr1/msfr1.html">
-
-                    <img src="img/logos/msfrlgo.png" class="screenshot" alt="Missfire">
-
-                  </a>
-              </div>
-
-              <div class="container">
-                <div>
-
-                    <a href="mfr2/msfr2.html">
-
-                      <img src="img/logos/msfr2lgo.png"  class="screenshot" alt="Misfire 2">
-
-                    </a>
-
-                </div>
-              </div>
-
-<!-- Patreon -->
-                <div class="container">
-
-                    <p class="title">   <strong>  Patreon   </strong>   </p>
-
-                      <i>
-
-                        I have a variety of tiers available if you feel like you wish to donate towards develpment of further games. <strong>This is not a requirement and is of course completely optional.</strong>
-
-                      </i>
-
-                      <!-- Link to Patreon page -->
-                        <div style="text-align: center; margin: 2.5rem 0 1rem;">
-
-                            <a href="patreon.html" 
-
-                                target="_blank" 
-
-                                rel="noopener noreferrer" 
-
-                                class="patreon-btn">
-
-                                Check out the tiers here!
-
-                            </a>
-
-                        </div>
-
-                </div>
-
-<!-- Footer -->
-    <footer style="text-align:center; padding: 20px; color: var(--gt-muted);">
-
-        © 2026 Caffeine Opossum Games<br>
-
-        All rights reserved.<br>
-
-    </footer>
-
-<!--  Parallax Script  -->
-    <script>
-
-        const bg = document.querySelector('.parallax-bg');
-
-            window.addEventListener('scroll', function() {
-
-            const scrolled = window.pageYOffset;
-
-            bg.style.transform = 'translate3d(0, ' + (scrolled * -0.4) + 'px, 0)';
-
-            });
-
-    </script>
-
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caffeine Opossum Games</title>
+  <link rel="stylesheet" href="css/msfr__.css">
+</head>
+<body>
+  <div class="parallax-bg"></div>
+
+  <div class="side-socials">
+    <a href="https://www.youtube.com/@MISFIRE98" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="img/util/Youtube Icon.png" alt="YouTube">
+      <span class="side-social-label">YouTube</span>
+    </a>
+    <a href="https://discord.gg/SP8hpWZaHq" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="img/util/Discord Icon.png" alt="Discord">
+      <span class="side-social-label">Discord</span>
+    </a>
+    <a href="https://www.patreon.com/cw/CaffeineOppsumGames" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="img/util/Patreon.png" alt="Patreon">
+      <span class="side-social-label">Patreon</span>
+    </a>
+  </div>
+
+  <a href="him.html" class="play-btn" title="Play">
+    <img src="img/util/play.png" alt="Play">
+  </a>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <img src="img/logos/cafopo.png" alt="Caffeine Opossum Games" class="logo">
+        <p class="hero-tag">
+          Solo developer making games with creativity, passion and attention to detail.
+          <strong>Heavily focused on driving games.</strong>
+        </p>
+      </div>
+      <div class="hero-media">
+        <div class="card-strip" style="overflow: visible; flex-wrap: wrap; justify-content: center;">
+          <a href="mfr1/msfr1.html" class="archive-card">
+            <img src="img/logos/msfrlgo.png" alt="Misfire 1" style="width: 220px;">
+          </a>
+          <a href="mfr2/msfr2.html" class="archive-card">
+            <img src="img/logos/msfr2lgo.png" alt="Misfire 2" style="width: 220px;">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bento">
+      <div class="panel" style="grid-column: span 7;">
+        <p class="title title-left"><strong>About</strong></p>
+        <p>
+          I'm a solo game developer making games I would want to play with creativity,
+          passion and attention to detail. Heavily focused on driving games.
+        </p>
+      </div>
+
+      <div class="panel" style="grid-column: span 5;">
+        <p class="title"><strong>Patreon</strong></p>
+        <p>
+          I have a variety of tiers available if you wish to donate towards development of further games.
+          <strong>This is not a requirement and is completely optional.</strong>
+        </p>
+        <div style="text-align: center; margin-top: 1.25rem;">
+          <a href="patreon.html" class="patreon-btn">Check out the tiers</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Caffeine Opossum Games<br>
+    All rights reserved.
+  </footer>
+
+  <script>
+    const bg = document.querySelector('.parallax-bg');
+    if (bg) {
+      window.addEventListener('scroll', function () {
+        bg.style.backgroundPosition = 'center ' + (window.pageYOffset * -0.15) + 'px';
+      }, { passive: true });
+    }
+  </script>
+
+</body>
 </html>

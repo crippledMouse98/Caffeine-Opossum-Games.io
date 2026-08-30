@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+  Caffeine Opossum Games — Misfire 1 Arena — Red Room
+  Written By: Jeeves https://github.com/JeevesGB
+  © 2026 JejCo | Caffeine Opossum Games
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caffeine Opossum Games — Misfire 1 — Red Room</title>
+  <link rel="stylesheet" href="../../css/msfr__.css">
+</head>
+<body>
+  <div class="parallax-bg"></div>
+
+  <a href="../../mfr1/msfr1.html" class="back-btn" title="Go Back">
+    <img src="../../img/msc/gbck.png" alt="Back">
+  </a>
+
+  <div class="side-socials">
+    <a href="https://www.youtube.com/@MISFIRE98" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="../../img/util/Youtube Icon.png" alt="YouTube">
+      <span class="side-social-label">YouTube</span>
+    </a>
+    <a href="https://discord.gg/SP8hpWZaHq" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="../../img/util/Discord Icon.png" alt="Discord">
+      <span class="side-social-label">Discord</span>
+    </a>
+    <a href="https://www.patreon.com/cw/CaffeineOppsumGames" target="_blank" rel="noopener noreferrer" class="side-social">
+      <img src="../../img/util/Patreon.png" alt="Patreon">
+      <span class="side-social-label">Patreon</span>
+    </a>
+  </div>
+
+  <nav class="side-thumbs">
+    <a href="skyscaper.html" class="side-thumb" title="Skyscraper">
+      <img src="../../img/level/Level Thumnails (1).png" alt="Skyscraper">
+      <span class="thumb-label">Skyscraper</span>
+    </a>
+    <a href="tar-pit.html" class="side-thumb" title="Tar Pit">
+      <img src="../../img/level/Level Thumnails (3).png" alt="Tar Pit">
+      <span class="thumb-label">Tar Pit</span>
+    </a>
+    <a href="the-temple.html" class="side-thumb" title="The Temple">
+      <img src="../../img/level/Level Thumnails (6).png" alt="The Temple">
+      <span class="thumb-label">The Temple</span>
+    </a>
+    <a href="arctic-edge.html" class="side-thumb" title="Arctic Edge">
+      <img src="../../img/level/Level Thumnails (8).png" alt="Arctic Edge">
+      <span class="thumb-label">Arctic Edge</span>
+    </a>
+    <a href="red-room.html" class="side-thumb" title="Red Room">
+      <img src="../../img/level/Level Thumnails (9).png" alt="Red Room">
+      <span class="thumb-label">Red Room</span>
+    </a>
+    <a href="the-gauntlet.html" class="side-thumb" title="The Gauntlet">
+      <img src="../../img/level/Level Thumnails (4).png" alt="The Gauntlet">
+      <span class="thumb-label">The Gauntlet</span>
+    </a>
+  </nav>
+
+
+  <main class="page detail-page">
+    <p class="title"><strong>Red Room</strong></p>
+
+    <section class="bento">
+      <div class="panel" style="grid-column: span 5;">
+        <p class="title title-left"><strong>About</strong></p>
+        <p>Arena preview for <strong>Red Room</strong>. More details coming soon.</p>
+      </div>
+
+      <div class="panel" style="grid-column: span 7;">
+        <p class="title"><strong>Preview</strong></p>
+        <div class="screenshot-grid detail-shots">
+          <img src="../../img/level/Level Thumnails (9).png" alt="Red Room 1" class="screenshot">
+          <img src="../../img/level/Level Thumnails (10).png" alt="Red Room 2" class="screenshot">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Caffeine Opossum Games<br>
+    All rights reserved.<br>
+    <a href="../../LICENSE" style="color: var(--bright-yellow);">Licence</a>
+  </footer>
+
+  <script>
+    const bg = document.querySelector('.parallax-bg');
+    if (bg) {
+      window.addEventListener('scroll', function () {
+        bg.style.backgroundPosition = 'center ' + (window.pageYOffset * -0.15) + 'px';
+      }, { passive: true });
+    }
+  </script>
+
+  <script src="../../js/main.js" defer></script>
+  <script src="../../js/gallery.js" defer></script>
+</body>
+</html>
